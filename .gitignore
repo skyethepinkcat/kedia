@@ -1,0 +1,7 @@
+build/*
+.cache/*
+.kdev4/*
+compile_commands.json
+kedia_manager.kdev4
+.qtc_clangd/*
+.ccls-cache/*

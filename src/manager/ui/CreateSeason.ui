@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateSeason</class>
+ <widget class="QDialog" name="CreateSeason">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>558</width>
+    <height>897</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Create Season</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="1" column="0">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="9" column="0">
+      <widget class="QLabel" name="numberLabel">
+       <property name="baseSize">
+        <size>
+         <width>460</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Number:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="seriesList">
+       <property name="accessibleName">
+        <string>Series list</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Select the series you want this season to be part of.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="TitleLabel">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Title:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLineEdit" name="TitleEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="toolTip">
+        <string>The title of the season. Clear it to reset to default.</string>
+       </property>
+       <property name="accessibleName">
+        <string>Season Title</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>The title of the season.</string>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QDoubleSpinBox" name="numberSpin">
+       <property name="toolTip">
+        <string>The number of the season, for sorting. If it is a bonus season, decimals are allowed.</string>
+       </property>
+       <property name="accessibleName">
+        <string>Season Number</string>
+       </property>
+       <property name="decimals">
+        <number>0</number>
+       </property>
+       <property name="value">
+        <double>0.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="seriesListLabel">
+       <property name="text">
+        <string>Series:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="IconLabel">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Icon:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="FileAdd">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Select the Image associated with this season.</string>
+         </property>
+         <property name="accessibleName">
+          <string>Select Image File</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Click to add an image file to be used as the icon.</string>
+         </property>
+         <property name="text">
+          <string>Add Image File...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="resetButton">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="toolTip">
+          <string>Resets the image file to the parent series image.</string>
+         </property>
+         <property name="accessibleName">
+          <string>Clear Image File</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Reverts the selected image file to the default.</string>
+         </property>
+         <property name="text">
+          <string>Clear</string>
+         </property>
+         <property name="icon">
+          <iconset theme="edit-clear">
+           <normaloff>.</normaloff>.</iconset>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="7" column="1">
+      <widget class="QCheckBox" name="isBonus">
+       <property name="toolTip">
+        <string>Check if the season is not part of the &quot;main series.&quot; For example extras on a blu-ray.</string>
+       </property>
+       <property name="accessibleName">
+        <string>Bonus Season Checkbox</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Select to mark the season as a bonus season.</string>
+       </property>
+       <property name="text">
+        <string>Bonus Season</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+      <widget class="QGraphicsView" name="imagePreview">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>460</width>
+         <height>690</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>230</width>
+         <height>322</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>This will be the season icon.</string>
+       </property>
+       <property name="accessibleName">
+        <string>Season Icon Preview</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Shows the icon the season will use.</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustIgnored</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>460</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>seriesList</tabstop>
+  <tabstop>FileAdd</tabstop>
+  <tabstop>resetButton</tabstop>
+  <tabstop>imagePreview</tabstop>
+  <tabstop>isBonus</tabstop>
+  <tabstop>numberSpin</tabstop>
+  <tabstop>TitleEdit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>CreateSeason</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>CreateSeason</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

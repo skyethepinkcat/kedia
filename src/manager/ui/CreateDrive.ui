@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateDrive</class>
+ <widget class="QDialog" name="CreateDrive">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>340</width>
+    <height>292</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Create Drive</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Couldn't find a known drive at the location you specified. &lt;/p&gt;&lt;p&gt;Please create one.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="filePathLabel">
+     <property name="text">
+      <string>Path:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="filePath">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="accessibleName">
+      <string>Drive Path</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Enter the root path of the drive.</string>
+     </property>
+     <property name="text">
+      <string>/</string>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="nameLabel">
+     <property name="text">
+      <string>Name:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="nameEdit">
+     <property name="accessibleName">
+      <string>Drive Name</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Input the name of the drive. Optional.</string>
+     </property>
+     <property name="placeholderText">
+      <string>Drive Name (Optional)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="rankLabel">
+     <property name="text">
+      <string>Rank:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QSpinBox" name="rankSpin">
+     <property name="toolTip">
+      <string>Increase to make the drive to preferred to others, decrease to make it less preferred.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Rank</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Input the preferred rank of the drive. </string>
+     </property>
+     <property name="minimum">
+      <number>-99</number>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QCheckBox" name="networkBox">
+     <property name="toolTip">
+      <string>Check to mark this as a network drive,  i.e. a device that requires internet.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Network Drive</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>If selected, the drive is considered a network drive.</string>
+     </property>
+     <property name="text">
+      <string>Network Drive</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QCheckBox" name="removeBox">
+     <property name="toolTip">
+      <string>Check to mark this as a removeable drive, i.e. a thumb drive.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Removeable Drive</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>If selected, the drive is considered a removable drive.</string>
+     </property>
+     <property name="text">
+      <string>Removeable Drive</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="videoPathEdit">
+       <property name="accessibleName">
+        <string>Video Directory Edit</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Input the directory that video files are stored</string>
+       </property>
+       <property name="text">
+        <string>/</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="browseButton">
+       <property name="accessibleName">
+        <string>Browse For Video Folder</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Press button to choose the folder videos are found.</string>
+       </property>
+       <property name="text">
+        <string>Browse...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Video Directory:</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>filePath</tabstop>
+  <tabstop>videoPathEdit</tabstop>
+  <tabstop>browseButton</tabstop>
+  <tabstop>nameEdit</tabstop>
+  <tabstop>rankSpin</tabstop>
+  <tabstop>networkBox</tabstop>
+  <tabstop>removeBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>CreateDrive</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>CreateDrive</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

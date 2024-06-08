@@ -1,0 +1,7 @@
+Language: Cpp
+BasedOnStyle: LLVM
+BreakBeforeBraces: Attach
+PointerAlignment: Left
+BreakBeforeTernaryOperators: false
+IndentWidth: 4
+

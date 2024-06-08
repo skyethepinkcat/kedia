@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateEpisode</class>
+ <widget class="QDialog" name="CreateEpisode">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>653</width>
+    <height>596</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Create Episode</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="seriesListLabel">
+     <property name="text">
+      <string>Series:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QComboBox" name="seriesList">
+     <property name="accessibleName">
+      <string>Series List</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Select the series this episode is part of.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Season:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QComboBox" name="seasonList">
+     <property name="accessibleName">
+      <string>Season List</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Select the season this series is part of.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="IconLabel">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Video File:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="FileAdd">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Select the video file for this episode.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Select Video File</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Add the episode's video file.</string>
+     </property>
+     <property name="text">
+      <string>Add Video File...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="thumbnailLabel">
+     <property name="text">
+      <string>Thumbnail Preview:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="numberLabel">
+     <property name="text">
+      <string>Number:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QDoubleSpinBox" name="numberSpin">
+     <property name="toolTip">
+      <string>The number of the season, for sorting. If it is a bonus season, decimals are allowed.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Season Number</string>
+     </property>
+     <property name="decimals">
+      <number>0</number>
+     </property>
+     <property name="value">
+      <double>0.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="TitleLabel">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Title:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="TitleEdit">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="toolTip">
+      <string>The title of the season. Clear it to reset to default.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Season Title</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>The title of the season.</string>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QCheckBox" name="checksumBox">
+     <property name="toolTip">
+      <string>Uncheck if you want to skip checksum computation. See contex menu for more information.</string>
+     </property>
+     <property name="whatsThis">
+      <string>Checksums take a long time to compute but are neccessary for verifying file integrity and used to determine which files are the same. If unchecked, the checksum is set to an empty string.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Compute Checksum</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Uncheck to skip computing the checksum, which takes some time but  can be used to verify file integrity and identity.</string>
+     </property>
+     <property name="text">
+      <string>Compute Checksum?</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QGraphicsView" name="imagePreview">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>516</width>
+       <height>296</height>
+      </size>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>512</width>
+       <height>294</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>This will be the thumbnail. You cannot edit this.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Thumbnail Preview</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Preview the thumbnail, pulled from the episode</string>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustIgnored</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QCheckBox" name="isBonus">
+     <property name="toolTip">
+      <string>Check if the episode is not a &quot;real episode.&quot; For example a recap episode.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Bonus Episode Checkbox</string>
+     </property>
+     <property name="text">
+      <string>Bonus Episode</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QProgressBar" name="progressBar">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="toolTip">
+      <string>Displays progress of the checksum.</string>
+     </property>
+     <property name="accessibleName">
+      <string>Checksum Progress Bar</string>
+     </property>
+     <property name="accessibleDescription">
+      <string>Displays progress of the checksum.</string>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>seriesList</tabstop>
+  <tabstop>seasonList</tabstop>
+  <tabstop>FileAdd</tabstop>
+  <tabstop>imagePreview</tabstop>
+  <tabstop>isBonus</tabstop>
+  <tabstop>numberSpin</tabstop>
+  <tabstop>TitleEdit</tabstop>
+  <tabstop>checksumBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>CreateEpisode</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>CreateEpisode</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
